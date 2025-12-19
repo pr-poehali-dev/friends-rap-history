@@ -31,8 +31,60 @@ const Index = () => {
   ];
 
   const tracks = [
-    { id: 1, title: 'мне п*хуй', year: '2023', duration: '3:24' },
-    { id: 2, title: 'звезда', year: '2025', duration: '2:58' },
+    { 
+      id: 1, 
+      title: 'мне п*хуй', 
+      year: '2023', 
+      duration: '3:24',
+      author: 'collab',
+      cover: 'https://cdn.poehali.dev/projects/d96184d0-a3f5-42fe-85ed-815670045320/files/1d6e3d11-e4ea-4ab8-86e4-8a0d63affc9b.jpg',
+      story: 'Первый совместный трек, где ребята выразили свободу творчества и независимость от чужого мнения'
+    },
+    { 
+      id: 2, 
+      title: 'звезда', 
+      year: '2025', 
+      duration: '2:58',
+      author: 'collab',
+      cover: 'https://cdn.poehali.dev/projects/d96184d0-a3f5-42fe-85ed-815670045320/files/bc20d693-9ec1-47c2-8bf9-d02f26ea6b07.jpg',
+      story: 'Хитовая новогодняя песня о достижении мечты и покорении вершин, облетела весь мир'
+    },
+    { 
+      id: 3, 
+      title: 'Королевский трон', 
+      year: '2024', 
+      duration: '4:12',
+      author: 'unloved',
+      cover: 'https://cdn.poehali.dev/files/3271492cea1734505ab48c39543cd13a (1).jpg',
+      story: 'Unloved написал этот трек после серии успехов, когда почувствовал себя на вершине. Мощная композиция о власти и уверенности'
+    },
+    { 
+      id: 4, 
+      title: 'Последняя роза', 
+      year: '2024', 
+      duration: '3:45',
+      author: 'litiy',
+      cover: 'https://cdn.poehali.dev/files/9cae31e2b9e4b2b1005b70be9045e43b (1).jpg',
+      story: 'Литий создал этот трек после расставания с первой любовью. Глубокий лирический рассказ о боли потери и красоте воспоминаний'
+    },
+    { 
+      id: 5, 
+      title: 'Поле маков', 
+      year: '2025', 
+      duration: '3:58',
+      author: 'litiy',
+      cover: 'https://cdn.poehali.dev/files/69cd3e03ca533873516b86406ad137bf.jpg',
+      story: 'Литий написал трек в память о погибшем друге детства. Меланхоличная композиция о потере и вечной памяти'
+    },
+    { 
+      id: 6, 
+      title: 'Лабиринт любви', 
+      year: '2025', 
+      duration: '4:05',
+      author: 'unloved',
+      cover: 'https://cdn.poehali.dev/files/b7c8d72ae415e0377cc552a0ba328ae0.jpg',
+      story: 'Unloved посвятил эту песню своей девушке Кристине, описывая сложный путь поиска настоящей любви среди препятствий жизни'
+    },
   ];
 
   const socials = [
@@ -246,43 +298,75 @@ const Index = () => {
       </section>
 
       <section id="music" className="py-20 px-4 bg-card/30">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           <h2 className="text-5xl font-bold text-center mb-12 text-gradient">Музыка</h2>
-          <div className="space-y-4">
-            {tracks.map((track) => (
-              <Card
-                key={track.id}
-                className="p-6 bg-card/50 backdrop-blur hover:bg-card/70 transition-all hover:scale-[1.02]"
-              >
-                <div className="flex items-center gap-4">
-                  <Button
-                    size="icon"
-                    className="w-14 h-14 rounded-full bg-gradient-hip-hop"
-                    onClick={() => togglePlay(track.id.toString())}
-                  >
-                    <Icon
-                      name={isPlaying === track.id.toString() ? 'Pause' : 'Play'}
-                      size={24}
+          <div className="grid md:grid-cols-2 gap-6">
+            {tracks.map((track) => {
+              const authorColor = 
+                track.author === 'collab' ? 'border-emerald-500' :
+                track.author === 'litiy' ? 'border-blue-500' :
+                'border-purple-500';
+              
+              const authorBg = 
+                track.author === 'collab' ? 'bg-emerald-500/20' :
+                track.author === 'litiy' ? 'bg-blue-500/20' :
+                'bg-purple-500/20';
+
+              const authorName = 
+                track.author === 'collab' ? 'UNLOVED × ЛИТИЙ' :
+                track.author === 'litiy' ? 'ЛИТИЙ' :
+                'UNLOVED';
+
+              return (
+                <Card
+                  key={track.id}
+                  className={`overflow-hidden bg-card/50 backdrop-blur hover:bg-card/70 transition-all hover:scale-[1.02] border-2 ${authorColor}`}
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={track.cover}
+                      alt={track.title}
+                      className="w-full h-full object-cover"
                     />
-                  </Button>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold">{track.title}</h3>
-                    <p className="text-muted-foreground">{track.year}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                    <Button
+                      size="icon"
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white/90 hover:bg-white text-black hover:scale-110 transition-transform"
+                      onClick={() => togglePlay(track.id.toString())}
+                    >
+                      <Icon
+                        name={isPlaying === track.id.toString() ? 'Pause' : 'Play'}
+                        size={28}
+                      />
+                    </Button>
                   </div>
-                  <div className="text-muted-foreground font-mono">{track.duration}</div>
-                </div>
-                {isPlaying === track.id.toString() && (
-                  <div className="mt-4 pt-4 border-t border-border">
-                    <div className="flex items-center gap-2">
-                      <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-hip-hop w-1/3 animate-pulse"></div>
+                  <div className="p-5">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold mb-1">{track.title}</h3>
+                        <p className="text-sm text-muted-foreground">{track.year} • {track.duration}</p>
                       </div>
-                      <Icon name="Volume2" size={20} className="text-primary" />
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${authorBg} border ${authorColor}`}>
+                        {authorName}
+                      </span>
                     </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {track.story}
+                    </p>
+                    {isPlaying === track.id.toString() && (
+                      <div className="mt-4 pt-4 border-t border-border">
+                        <div className="flex items-center gap-2">
+                          <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
+                            <div className="h-full bg-gradient-hip-hop w-1/3 animate-pulse"></div>
+                          </div>
+                          <Icon name="Volume2" size={18} className="text-primary" />
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
-              </Card>
-            ))}
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
