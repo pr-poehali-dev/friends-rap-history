@@ -408,7 +408,7 @@ const Index = () => {
       <section id="gallery" className="py-20 px-4 bg-card/30">
         <div className="container mx-auto">
           <h2 className="text-5xl font-bold text-center mb-12 text-gradient">Галерея</h2>
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-4xl mx-auto">
             <Card className="overflow-hidden bg-card/50 backdrop-blur border-2">
               <img
                 src="https://cdn.poehali.dev/files/IMG_20251219_184629_764.jpg"
@@ -419,19 +419,6 @@ const Index = () => {
                 <h3 className="text-2xl font-bold mb-2">UNLOVED × ЛИТИЙ</h3>
                 <p className="text-muted-foreground">
                   На премии МУЗ-ТВ - два друга, которые вместе покорили мир музыки
-                </p>
-              </div>
-            </Card>
-            <Card className="overflow-hidden bg-card/50 backdrop-blur border-2">
-              <img
-                src="https://cdn.poehali.dev/projects/d96184d0-a3f5-42fe-85ed-815670045320/files/349b19e8-8f1e-4918-a096-9968f039be97.jpg"
-                alt="Unloved и Литий"
-                className="w-full h-auto"
-              />
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">За кулисами</h3>
-                <p className="text-muted-foreground">
-                  Студийная фотосессия для нового альбома
                 </p>
               </div>
             </Card>
