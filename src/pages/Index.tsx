@@ -52,8 +52,8 @@ const Index = () => {
     { 
       id: 3, 
       title: 'Королевский трон', 
-      year: '2024', 
-      duration: '4:12',
+      year: '2026', 
+      duration: '1:52',
       author: 'unloved',
       cover: 'https://cdn.poehali.dev/files/3271492cea1734505ab48c39543cd13a (1).jpg',
       story: 'Unloved написал этот трек после серии успехов, когда почувствовал себя на вершине. Мощная композиция о власти и уверенности'
@@ -61,8 +61,8 @@ const Index = () => {
     { 
       id: 4, 
       title: 'Последняя роза', 
-      year: '2024', 
-      duration: '3:45',
+      year: '2026', 
+      duration: '1:45',
       author: 'litiy',
       cover: 'https://cdn.poehali.dev/files/9cae31e2b9e4b2b1005b70be9045e43b (1).jpg',
       story: 'Литий создал этот трек после расставания с первой любовью. Глубокий лирический рассказ о боли потери и красоте воспоминаний'
@@ -70,8 +70,8 @@ const Index = () => {
     { 
       id: 5, 
       title: 'Поле маков', 
-      year: '2025', 
-      duration: '3:58',
+      year: '2026', 
+      duration: '1:58',
       author: 'litiy',
       cover: 'https://cdn.poehali.dev/files/69cd3e03ca533873516b86406ad137bf.jpg',
       story: 'Литий написал трек в память о погибшем друге детства. Меланхоличная композиция о потере и вечной памяти'
@@ -79,8 +79,8 @@ const Index = () => {
     { 
       id: 6, 
       title: 'Лабиринт любви', 
-      year: '2025', 
-      duration: '4:05',
+      year: '2026', 
+      duration: '1:55',
       author: 'unloved',
       cover: 'https://cdn.poehali.dev/files/b7c8d72ae415e0377cc552a0ba328ae0.jpg',
       story: 'Unloved посвятил эту песню своей девушке Кристине, описывая сложный путь поиска настоящей любви среди препятствий жизни'
@@ -408,7 +408,20 @@ const Index = () => {
       <section id="gallery" className="py-20 px-4 bg-card/30">
         <div className="container mx-auto">
           <h2 className="text-5xl font-bold text-center mb-12 text-gradient">Галерея</h2>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-6">
+            <Card className="overflow-hidden bg-card/50 backdrop-blur border-2">
+              <img
+                src="https://cdn.poehali.dev/files/IMG_20251219_184629_764.jpg"
+                alt="Unloved и Литий на МУЗ-ТВ"
+                className="w-full h-auto"
+              />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-2">UNLOVED × ЛИТИЙ</h3>
+                <p className="text-muted-foreground">
+                  На премии МУЗ-ТВ - два друга, которые вместе покорили мир музыки
+                </p>
+              </div>
+            </Card>
             <Card className="overflow-hidden bg-card/50 backdrop-blur border-2">
               <img
                 src="https://cdn.poehali.dev/projects/d96184d0-a3f5-42fe-85ed-815670045320/files/349b19e8-8f1e-4918-a096-9968f039be97.jpg"
@@ -416,9 +429,9 @@ const Index = () => {
                 className="w-full h-auto"
               />
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">UNLOVED × ЛИТИЙ</h3>
+                <h3 className="text-2xl font-bold mb-2">За кулисами</h3>
                 <p className="text-muted-foreground">
-                  Два друга, которые вместе покорили мир музыки
+                  Студийная фотосессия для нового альбома
                 </p>
               </div>
             </Card>
